@@ -96,11 +96,32 @@ a:hover{border-bottom-color:var(--verdigris)}
   display:flex;flex-direction:column;background:var(--abyss);border:1px solid var(--rule);
   color:inherit;position:relative;transition:border-color .2s,background .2s,transform .2s;
 }
-a.card{border-bottom:1px solid var(--rule)}
-a.card:hover{border-color:var(--dim);background:var(--hull);transform:translateY(-2px)}
+.card.is-link:hover{border-color:var(--dim);background:var(--hull)}
+.card__body{position:relative}
+.card h2 a{color:inherit;border:0}
+.card h2 a::after{content:"";position:absolute;inset:0}
+.card h2 a:focus-visible{outline:0}
+.card h2 a:focus-visible::after{outline:2px solid var(--brass);outline-offset:-2px}
 .card::before{content:"";position:absolute;left:-1px;top:-1px;width:2.5rem;height:2px;background:var(--brass);z-index:1}
 .shot{aspect-ratio:16/10;background:var(--hull);border-bottom:1px solid var(--rule);overflow:hidden;position:relative}
 .shot img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;filter:saturate(.85)}
+.reel{display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
+.reel::-webkit-scrollbar{display:none}
+.reel img{flex:0 0 100%;scroll-snap-align:start}
+.reel__btn{
+  position:absolute;top:50%;transform:translateY(-50%);width:2rem;height:2rem;
+  background:rgba(15,30,34,.82);border:1px solid var(--rule);color:var(--bone);
+  font-family:var(--mono);font-size:.9rem;line-height:1;cursor:pointer;opacity:0;transition:opacity .18s,border-color .18s;z-index:2
+}
+.reel__btn:hover{border-color:var(--brass)}
+.reel__btn--prev{left:.5rem}.reel__btn--next{right:.5rem}
+.reel__btn[disabled]{visibility:hidden}
+.shot:hover .reel__btn,.reel__btn:focus-visible{opacity:1}
+@media (hover:none){.reel__btn{display:none}}
+.reel__dots{position:absolute;left:0;right:0;bottom:.55rem;display:flex;justify-content:center;gap:.35rem;z-index:2;pointer-events:none}
+.reel__dots span{width:1.1rem;height:2px;background:rgba(230,228,220,.35)}
+.reel__dots span.on{background:var(--brass)}
+.reel__count{position:absolute;top:.5rem;right:.5rem;z-index:2;font-family:var(--mono);font-size:.625rem;letter-spacing:.1em;padding:.25rem .4rem;background:rgba(15,30,34,.82);color:var(--haze)}
 .shot--blank{
   display:flex;align-items:center;justify-content:center;
   background-image:
@@ -233,24 +254,80 @@ a.card:hover{border-color:var(--dim);background:var(--hull);transform:translateY
     });
   }
 
+  function imagesOf(p){
+    if (Array.isArray(p.images)) return p.images.filter(Boolean);
+    return p.image ? [p.image] : [];
+  }
+
+  function reel(p, imgs){
+    var shot = el("div", "shot");
+    var track = el("div", "reel");
+    track.tabIndex = 0;
+    track.setAttribute("role", "region");
+    track.setAttribute("aria-label", p.name + " screenshots");
+    imgs.forEach(function(src, i){
+      var img = el("img");
+      img.src = src; img.loading = "lazy"; img.decoding = "async";
+      img.alt = p.name + " screenshot " + (i + 1) + " of " + imgs.length;
+      track.appendChild(img);
+    });
+    shot.appendChild(track);
+    if (imgs.length < 2) return shot;
+
+    var prev = el("button", "reel__btn reel__btn--prev", "‹");
+    var next = el("button", "reel__btn reel__btn--next", "›");
+    prev.type = next.type = "button";
+    prev.setAttribute("aria-label", "Previous screenshot");
+    next.setAttribute("aria-label", "Next screenshot");
+    var dots = el("div", "reel__dots");
+    imgs.forEach(function(){ dots.appendChild(el("span")); });
+    var count = el("span", "reel__count");
+    shot.append(prev, next, dots, count);
+
+    function idx(){ return Math.round(track.scrollLeft / Math.max(1, track.clientWidth)); }
+    function go(i){ track.scrollTo({ left: i * track.clientWidth, behavior: "smooth" }); }
+    function sync(){
+      var i = idx();
+      Array.prototype.forEach.call(dots.children, function(d, j){ d.className = j === i ? "on" : ""; });
+      prev.disabled = i === 0; next.disabled = i === imgs.length - 1;
+      count.textContent = (i + 1) + " / " + imgs.length;
+    }
+    prev.addEventListener("click", function(){ go(idx() - 1); });
+    next.addEventListener("click", function(){ go(idx() + 1); });
+    track.addEventListener("keydown", function(e){
+      if (e.key === "ArrowLeft"){ e.preventDefault(); go(idx() - 1); }
+      if (e.key === "ArrowRight"){ e.preventDefault(); go(idx() + 1); }
+    });
+    var t; track.addEventListener("scroll", function(){ clearTimeout(t); t = setTimeout(sync, 60); }, { passive: true });
+    requestAnimationFrame(sync);
+    return shot;
+  }
+
   function card(p){
     var st = data.statuses[p.status] || { label: p.status, tone: "done" };
-    var root = el(p.url ? "a" : "article", "card");
-    if (p.url){ root.href = p.url; if (/^https?:/.test(p.url)) root.rel = "noopener"; }
+    var root = el("article", "card" + (p.url ? " is-link" : ""));
+    var imgs = imagesOf(p);
 
-    var shot = el("div", "shot" + (p.image ? "" : " shot--blank"));
-    if (p.image){
-      var img = el("img"); img.src = p.image; img.alt = p.name + " screenshot"; img.loading = "lazy";
-      shot.appendChild(img);
+    if (imgs.length){
+      root.appendChild(reel(p, imgs));
     } else {
-      shot.setAttribute("aria-hidden","true");
-      shot.appendChild(el("span", "shot__mono", initials(p.name)));
+      var blank = el("div", "shot shot--blank");
+      blank.setAttribute("aria-hidden","true");
+      blank.appendChild(el("span", "shot__mono", initials(p.name)));
+      root.appendChild(blank);
     }
-    root.appendChild(shot);
 
     var body = el("div", "card__body");
-    var h = el("h2", null, p.name);
-    if (p.url) h.appendChild(el("span", "go", "↗"));
+    var h = el("h2");
+    if (p.url){
+      var a = el("a", null, p.name);
+      a.href = p.url;
+      if (/^https?:/.test(p.url) && p.url.indexOf("https://justbost.com/") !== 0) a.rel = "noopener";
+      h.appendChild(a);
+      h.appendChild(el("span", "go", "↗"));
+    } else {
+      h.textContent = p.name;
+    }
     body.appendChild(h);
 
     var pills = el("div", "pills");
