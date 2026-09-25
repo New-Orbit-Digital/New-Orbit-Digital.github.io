@@ -14,6 +14,15 @@
   },
   "projects": [
     {
+      "name": "Airlock",
+      "status": "in-use",
+      "type": "app",
+      "blurb": "Catch passing tasks, sort them later — a tiny capture surface plus an Eisenhower matrix that syncs across web, phone, and Windows.",
+      "stack": "Supabase · Cloudflare Pages · Electron",
+      "image": null,
+      "url": "https://airlock.neworbitdigital.com"
+    },
+    {
       "name": "Ads agent",
       "status": "in-use",
       "type": "app",
