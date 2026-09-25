@@ -19,7 +19,13 @@
       "type": "app",
       "blurb": "Catch passing tasks, sort them later — a tiny capture surface plus an Eisenhower matrix that syncs across web, phone, and Windows.",
       "stack": "Supabase · Cloudflare Pages · Electron",
-      "images": [],
+      "images": [
+        "shots/airlock/01.svg",
+        "shots/airlock/02.svg",
+        "shots/airlock/03.svg",
+        "shots/airlock/04.svg",
+        "shots/airlock/05.svg"
+      ],
       "url": "https://airlock.neworbitdigital.com"
     },
     {
@@ -44,9 +50,15 @@
       "name": "Ads agent",
       "status": "in-use",
       "type": "app",
-      "blurb": "One platform across marketing channels — daily analytics, custom reporting, and change-history tagging so every performance shift traces back to its cause.",
-      "stack": "Node · Supabase",
-      "images": [],
+      "blurb": "Warehouse-native paid search platform: Google and Microsoft Ads in one view, automatic ad-group and keyword flagging, AI recommendations with outcome tracking, and change notes that write their own follow-up read-outs.",
+      "stack": "FastAPI · Supabase/Postgres · Chart.js · Claude API",
+      "images": [
+        "shots/ads-agent/01.png",
+        "shots/ads-agent/02.png",
+        "shots/ads-agent/03.png",
+        "shots/ads-agent/04.png",
+        "shots/ads-agent/05.png"
+      ],
       "url": null
     },
     {
