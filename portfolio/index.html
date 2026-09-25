@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400;12..96,75..100,600;12..96,75..100,800&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="portfolio.css">
 <style>
 :root{
   --abyss:#0F1E22;
@@ -68,85 +69,8 @@ a:hover{border-bottom-color:var(--verdigris)}
   text-transform:uppercase;margin:.9rem 0 1.5rem;
 }
 .intro__title em{font-style:normal;color:var(--brass)}
+.pf-root{padding-bottom:6rem}
 .intro__lede{font-family:var(--display);font-variation-settings:"wdth" 84;font-weight:400;font-size:clamp(1.125rem,1rem + .6vw,1.5rem);line-height:1.45;max-width:34ch;margin:0;color:var(--haze)}
-
-/* ---------- filters ---------- */
-.filters{
-  display:flex;flex-direction:column;gap:1rem;padding:1.5rem 0 1.75rem;
-  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin-bottom:2rem;
-}
-.fgroup{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem}
-.fgroup__label{width:4.5rem;flex:0 0 auto}
-.chip{
-  font-family:var(--mono);font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--haze);background:transparent;border:1px solid var(--rule);
-  padding:.5rem .8rem;cursor:pointer;transition:all .18s;line-height:1;
-}
-.chip:hover{border-color:var(--dim);color:var(--bone)}
-.chip[aria-pressed="true"]{background:var(--brass);border-color:var(--brass);color:var(--abyss);font-weight:500}
-.chip__n{opacity:.6;margin-left:.35rem}
-.filters__foot{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
-.count{font-family:var(--mono);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
-.clear{font-family:var(--mono);font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;background:none;border:0;border-bottom:1px solid rgba(95,199,177,.35);color:var(--verdigris);cursor:pointer;padding:0 0 1px}
-.clear[hidden]{display:none}
-
-/* ---------- grid ---------- */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(17.5rem,1fr));gap:1.5rem;padding-bottom:6rem}
-.card{
-  display:flex;flex-direction:column;background:var(--abyss);border:1px solid var(--rule);
-  color:inherit;position:relative;transition:border-color .2s,background .2s,transform .2s;
-}
-.card.is-link:hover{border-color:var(--dim);background:var(--hull)}
-.card__body{position:relative}
-.card h2 a{color:inherit;border:0}
-.card h2 a::after{content:"";position:absolute;inset:0}
-.card h2 a:focus-visible{outline:0}
-.card h2 a:focus-visible::after{outline:2px solid var(--brass);outline-offset:-2px}
-.card::before{content:"";position:absolute;left:-1px;top:-1px;width:2.5rem;height:2px;background:var(--brass);z-index:1}
-.shot{aspect-ratio:16/10;background:var(--hull);border-bottom:1px solid var(--rule);overflow:hidden;position:relative}
-.shot img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;filter:saturate(.85)}
-.reel{display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
-.reel::-webkit-scrollbar{display:none}
-.reel img{flex:0 0 100%;scroll-snap-align:start}
-.reel__btn{
-  position:absolute;top:50%;transform:translateY(-50%);width:2rem;height:2rem;
-  background:rgba(15,30,34,.82);border:1px solid var(--rule);color:var(--bone);
-  font-family:var(--mono);font-size:.9rem;line-height:1;cursor:pointer;opacity:0;transition:opacity .18s,border-color .18s;z-index:2
-}
-.reel__btn:hover{border-color:var(--brass)}
-.reel__btn--prev{left:.5rem}.reel__btn--next{right:.5rem}
-.reel__btn[disabled]{visibility:hidden}
-.shot:hover .reel__btn,.reel__btn:focus-visible{opacity:1}
-@media (hover:none){.reel__btn{display:none}}
-.reel__dots{position:absolute;left:0;right:0;bottom:.55rem;display:flex;justify-content:center;gap:.35rem;z-index:2;pointer-events:none}
-.reel__dots span{width:1.1rem;height:2px;background:rgba(230,228,220,.35)}
-.reel__dots span.on{background:var(--brass)}
-.reel__count{position:absolute;top:.5rem;right:.5rem;z-index:2;font-family:var(--mono);font-size:.625rem;letter-spacing:.1em;padding:.25rem .4rem;background:rgba(15,30,34,.82);color:var(--haze)}
-.shot--blank{
-  display:flex;align-items:center;justify-content:center;
-  background-image:
-    linear-gradient(var(--rule) 1px,transparent 1px),
-    linear-gradient(90deg,var(--rule) 1px,transparent 1px);
-  background-size:1.5rem 1.5rem;background-position:-1px -1px;
-}
-.shot--blank::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(22,41,46,.2) 0%,rgba(22,41,46,.92) 75%)}
-.shot__mono{
-  position:relative;z-index:1;font-family:var(--display);font-variation-settings:"wdth" 75;
-  font-weight:800;font-size:3rem;letter-spacing:.08em;color:var(--dim);opacity:.75;
-}
-.card__body{padding:1.25rem 1.35rem 1.4rem;display:flex;flex-direction:column;gap:.6rem;flex:1}
-.card h2{font-family:var(--display);font-variation-settings:"wdth" 88;font-weight:600;font-size:1.1875rem;line-height:1.25;margin:0;display:flex;justify-content:space-between;gap:.75rem;align-items:baseline}
-.card h2 .go{font-family:var(--mono);font-size:.8rem;color:var(--verdigris);flex:0 0 auto}
-.card p{margin:0;font-size:.9375rem;line-height:1.6;color:var(--haze)}
-.card .card__stack{font-family:var(--mono);font-size:.625rem;letter-spacing:.1em;color:var(--dim);text-transform:uppercase;margin-top:auto!important;padding-top:.35rem}
-.pills{display:flex;flex-wrap:wrap;gap:.4rem}
-.pill{font-family:var(--mono);font-size:.625rem;letter-spacing:.14em;text-transform:uppercase;padding:.3rem .5rem;border:1px solid var(--rule);color:var(--dim);line-height:1}
-.pill--live{color:var(--verdigris);border-color:rgba(95,199,177,.45)}
-.pill--dev{color:var(--brass);border-color:rgba(224,174,77,.45)}
-.pill--done{color:var(--haze)}
-.pill--live::before,.pill--dev::before{content:"● ";font-size:.55rem;vertical-align:.08em}
-
-.empty{grid-column:1/-1;padding:3rem 0;text-align:center;color:var(--dim);font-family:var(--mono);font-size:.8125rem;letter-spacing:.1em;text-transform:uppercase}
 
 /* ---------- responsive ---------- */
 @media (max-width:60rem){
@@ -158,10 +82,6 @@ a:hover{border-bottom-color:var(--verdigris)}
   .rail__nav a:not(.keep){display:none}
   .rail__foot{display:none}
   .page{margin-left:0}
-}
-@media (max-width:30rem){
-  .fgroup__label{width:100%}
-  .grid{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
@@ -190,188 +110,11 @@ a:hover{border-bottom-color:var(--verdigris)}
     <p class="intro__lede">Apps, games, tools, and analysis — some in daily use, some still on the bench.</p>
   </header>
 
-  <div class="filters" role="group" aria-label="Filter projects">
-    <div class="fgroup" id="f-status"><span class="tag fgroup__label">Status</span></div>
-    <div class="fgroup" id="f-type"><span class="tag fgroup__label">Type</span></div>
-    <div class="filters__foot">
-      <span class="count" id="count" aria-live="polite"></span>
-      <button class="clear" id="clear" type="button" hidden>Clear filters</button>
-    </div>
-  </div>
-
-  <div class="grid" id="grid"></div>
+  <div class="pf-root" data-portfolio data-src="projects.json" data-hash></div>
 
 </div>
 </main>
 
-<script>
-(function(){
-  "use strict";
-  var grid = document.getElementById("grid");
-  var countEl = document.getElementById("count");
-  var clearBtn = document.getElementById("clear");
-  var active = { status: new Set(), type: new Set() };
-  var data;
-
-  function el(tag, cls, text){
-    var n = document.createElement(tag);
-    if (cls) n.className = cls;
-    if (text != null) n.textContent = text;
-    return n;
-  }
-  function initials(name){
-    return name.replace(/&/g," ").split(/\s+/).filter(Boolean).slice(0,2).map(function(w){return w[0];}).join("").toUpperCase();
-  }
-
-  function readHash(){
-    var p = new URLSearchParams(location.hash.slice(1));
-    ["status","type"].forEach(function(k){
-      active[k] = new Set((p.get(k) || "").split(",").filter(Boolean));
-    });
-  }
-  function writeHash(){
-    var p = new URLSearchParams();
-    ["status","type"].forEach(function(k){ if (active[k].size) p.set(k, Array.from(active[k]).join(",")); });
-    var h = p.toString();
-    history.replaceState(null, "", h ? "#" + h : location.pathname);
-  }
-
-  function buildChips(groupId, key, dict){
-    var group = document.getElementById(groupId);
-    Object.keys(dict).forEach(function(id){
-      var n = data.projects.filter(function(p){ return p[key] === id; }).length;
-      if (!n) return;
-      var label = typeof dict[id] === "string" ? dict[id] : dict[id].label;
-      var b = el("button", "chip", label);
-      b.type = "button";
-      b.dataset.key = key; b.dataset.id = id;
-      b.appendChild(el("span", "chip__n", String(n)));
-      b.addEventListener("click", function(){
-        active[key].has(id) ? active[key].delete(id) : active[key].add(id);
-        render();
-      });
-      group.appendChild(b);
-    });
-  }
-
-  function imagesOf(p){
-    if (Array.isArray(p.images)) return p.images.filter(Boolean);
-    return p.image ? [p.image] : [];
-  }
-
-  function reel(p, imgs){
-    var shot = el("div", "shot");
-    var track = el("div", "reel");
-    track.tabIndex = 0;
-    track.setAttribute("role", "region");
-    track.setAttribute("aria-label", p.name + " screenshots");
-    imgs.forEach(function(src, i){
-      var img = el("img");
-      img.src = src; img.loading = "lazy"; img.decoding = "async";
-      img.alt = p.name + " screenshot " + (i + 1) + " of " + imgs.length;
-      track.appendChild(img);
-    });
-    shot.appendChild(track);
-    if (imgs.length < 2) return shot;
-
-    var prev = el("button", "reel__btn reel__btn--prev", "‹");
-    var next = el("button", "reel__btn reel__btn--next", "›");
-    prev.type = next.type = "button";
-    prev.setAttribute("aria-label", "Previous screenshot");
-    next.setAttribute("aria-label", "Next screenshot");
-    var dots = el("div", "reel__dots");
-    imgs.forEach(function(){ dots.appendChild(el("span")); });
-    var count = el("span", "reel__count");
-    shot.append(prev, next, dots, count);
-
-    function idx(){ return Math.round(track.scrollLeft / Math.max(1, track.clientWidth)); }
-    function go(i){ track.scrollTo({ left: i * track.clientWidth, behavior: "smooth" }); }
-    function sync(){
-      var i = idx();
-      Array.prototype.forEach.call(dots.children, function(d, j){ d.className = j === i ? "on" : ""; });
-      prev.disabled = i === 0; next.disabled = i === imgs.length - 1;
-      count.textContent = (i + 1) + " / " + imgs.length;
-    }
-    prev.addEventListener("click", function(){ go(idx() - 1); });
-    next.addEventListener("click", function(){ go(idx() + 1); });
-    track.addEventListener("keydown", function(e){
-      if (e.key === "ArrowLeft"){ e.preventDefault(); go(idx() - 1); }
-      if (e.key === "ArrowRight"){ e.preventDefault(); go(idx() + 1); }
-    });
-    var t; track.addEventListener("scroll", function(){ clearTimeout(t); t = setTimeout(sync, 60); }, { passive: true });
-    requestAnimationFrame(sync);
-    return shot;
-  }
-
-  function card(p){
-    var st = data.statuses[p.status] || { label: p.status, tone: "done" };
-    var root = el("article", "card" + (p.url ? " is-link" : ""));
-    var imgs = imagesOf(p);
-
-    if (imgs.length){
-      root.appendChild(reel(p, imgs));
-    } else {
-      var blank = el("div", "shot shot--blank");
-      blank.setAttribute("aria-hidden","true");
-      blank.appendChild(el("span", "shot__mono", initials(p.name)));
-      root.appendChild(blank);
-    }
-
-    var body = el("div", "card__body");
-    var h = el("h2");
-    if (p.url){
-      var a = el("a", null, p.name);
-      a.href = p.url;
-      if (/^https?:/.test(p.url) && p.url.indexOf("https://justbost.com/") !== 0) a.rel = "noopener";
-      h.appendChild(a);
-      h.appendChild(el("span", "go", "↗"));
-    } else {
-      h.textContent = p.name;
-    }
-    body.appendChild(h);
-
-    var pills = el("div", "pills");
-    pills.appendChild(el("span", "pill pill--" + st.tone, st.label));
-    pills.appendChild(el("span", "pill", data.types[p.type] || p.type));
-    body.appendChild(pills);
-
-    if (p.blurb) body.appendChild(el("p", null, p.blurb));
-    if (p.stack) body.appendChild(el("p", "card__stack", p.stack));
-    root.appendChild(body);
-    return root;
-  }
-
-  function render(){
-    document.querySelectorAll(".chip").forEach(function(c){
-      c.setAttribute("aria-pressed", active[c.dataset.key].has(c.dataset.id) ? "true" : "false");
-    });
-    var shown = data.projects.filter(function(p){
-      return (!active.status.size || active.status.has(p.status)) &&
-             (!active.type.size || active.type.has(p.type));
-    });
-    grid.replaceChildren.apply(grid, shown.map(card));
-    if (!shown.length) grid.appendChild(el("p", "empty", "Nothing matches those filters yet."));
-    var total = data.projects.length;
-    countEl.textContent = shown.length === total ? total + " projects" : shown.length + " of " + total + " projects";
-    clearBtn.hidden = !(active.status.size || active.type.size);
-    writeHash();
-  }
-
-  clearBtn.addEventListener("click", function(){ active.status.clear(); active.type.clear(); render(); });
-
-  fetch("projects.json", { cache: "no-cache" })
-    .then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); })
-    .then(function(json){
-      data = json;
-      readHash();
-      buildChips("f-status", "status", data.statuses);
-      buildChips("f-type", "type", data.types);
-      render();
-    })
-    .catch(function(){
-      grid.appendChild(el("p", "empty", "Projects didn’t load. Refresh to try again."));
-    });
-})();
-</script>
+<script src="portfolio.js" defer></script>
 </body>
 </html>
