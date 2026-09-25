@@ -23,6 +23,24 @@
       "url": "https://airlock.neworbitdigital.com"
     },
     {
+      "name": "BUS SUB",
+      "status": "playable",
+      "type": "game",
+      "blurb": "A substitute driver, a broken-down school bus and a five-minute deadline. Keep the kids calm, stay hydrated without overdoing it, and get everyone back to school.",
+      "stack": "Vanilla JS · Canvas 2D pseudo-3D · HTML5 Audio",
+      "image": "https://justbost.com/bus-sub/screenshot.png",
+      "url": "https://justbost.com/bus-sub/"
+    },
+    {
+      "name": "Night Shift",
+      "status": "playable",
+      "type": "game",
+      "blurb": "A turn-based solo survival-horror crawl where every action shows its odds before you commit and a failed roll ends your turn. Four scenarios, seeded maps you can replay.",
+      "stack": "Vanilla HTML · CSS · JS",
+      "image": "https://justbost.com/night-shift/screenshot.png",
+      "url": "https://justbost.com/night-shift/"
+    },
+    {
       "name": "Ads agent",
       "status": "in-use",
       "type": "app",
