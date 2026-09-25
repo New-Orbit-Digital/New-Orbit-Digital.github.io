@@ -76,16 +76,26 @@
       "type": "analysis",
       "blurb": "Enrollment, retention, and pipeline analysis for a private school, delivered to its board of trustees.",
       "stack": "Data analysis · Reporting",
-      "images": [],
+      "images": [
+        "shots/enrollment-analytics/01.svg",
+        "shots/enrollment-analytics/02.svg",
+        "shots/enrollment-analytics/03.svg",
+        "shots/enrollment-analytics/04.svg",
+        "shots/enrollment-analytics/05.svg"
+      ],
       "url": null
     },
     {
       "name": "KINOLUST",
       "status": "in-use",
       "type": "tool",
-      "blurb": "A film library archived into one browsable surface that also runs scheduled streams for large watch parties.",
-      "stack": "Encode pipeline · Scheduling",
-      "images": [],
+      "blurb": "A DJ-style curation tool for film watch parties — browse a 5,000-film library by genre, director and TMDB keyword, build a set, and play it through mpv to friends on a Discord screenshare.",
+      "stack": "Node.js · Express · SQLite · mpv · TMDB API",
+      "images": [
+        "shots/kinolust/01.png",
+        "shots/kinolust/02.png",
+        "shots/kinolust/03.png"
+      ],
       "url": null
     },
     {
@@ -96,6 +106,15 @@
       "stack": "Node · WebSockets",
       "images": [],
       "url": null
+    },
+    {
+      "name": "Stemma",
+      "status": "in-dev",
+      "type": "app",
+      "blurb": "A community-maintained catalog of cannabis strain lineage. Search a strain to see its parents, ancestors, origin and sources, with timeline and map views.",
+      "stack": "Python build · Vanilla JS · Leaflet · GitHub Pages",
+      "images": ["https://justbost.com/stemma/screenshot.png"],
+      "url": "https://justbost.com/stemma/"
     },
     {
       "name": "Primer",
