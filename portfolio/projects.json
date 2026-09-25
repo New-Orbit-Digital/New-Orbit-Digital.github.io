@@ -47,6 +47,15 @@
       "url": "https://justbost.com/night-shift/"
     },
     {
+      "name": "FIELD",
+      "status": "playable",
+      "type": "game",
+      "blurb": "Third-person survival horror around an overturned cop car in a snowy field at night. Fix the radio, call for help, and hold the dark back with a flashlight, a pistol and a few flares until the rescue arrives.",
+      "stack": "three.js · Web Audio (procedural) · Vanilla JS",
+      "images": ["https://justbost.com/field/cover.svg"],
+      "url": "https://justbost.com/field/"
+    },
+    {
       "name": "Ads agent",
       "status": "in-use",
       "type": "app",
