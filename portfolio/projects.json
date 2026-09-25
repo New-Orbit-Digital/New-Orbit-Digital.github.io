@@ -1,0 +1,71 @@
+{
+  "statuses": {
+    "in-use":   { "label": "In use",         "tone": "live" },
+    "playable": { "label": "Playable",       "tone": "live" },
+    "in-dev":   { "label": "In development", "tone": "dev" },
+    "delivered":{ "label": "Delivered",      "tone": "done" },
+    "concept":  { "label": "Concept",        "tone": "done" }
+  },
+  "types": {
+    "app":      "App",
+    "game":     "Game",
+    "tool":     "Tool",
+    "analysis": "Analysis"
+  },
+  "projects": [
+    {
+      "name": "Ads agent",
+      "status": "in-use",
+      "type": "app",
+      "blurb": "One platform across marketing channels — daily analytics, custom reporting, and change-history tagging so every performance shift traces back to its cause.",
+      "stack": "Node · Supabase",
+      "image": null,
+      "url": null
+    },
+    {
+      "name": "Capture & triage inbox",
+      "status": "in-use",
+      "type": "app",
+      "blurb": "Throw anything at it and it sorts itself — tasks, events, research topics, and lists each land on their own surface.",
+      "stack": "Cloudflare Workers · Supabase",
+      "image": null,
+      "url": null
+    },
+    {
+      "name": "Enrollment analytics",
+      "status": "delivered",
+      "type": "analysis",
+      "blurb": "Enrollment, retention, and pipeline analysis for a private school, delivered to its board of trustees.",
+      "stack": "Data analysis · Reporting",
+      "image": null,
+      "url": null
+    },
+    {
+      "name": "KINOLUST",
+      "status": "in-use",
+      "type": "tool",
+      "blurb": "A film library archived into one browsable surface that also runs scheduled streams for large watch parties.",
+      "stack": "Encode pipeline · Scheduling",
+      "image": null,
+      "url": null
+    },
+    {
+      "name": "Ghost Signal",
+      "status": "playable",
+      "type": "game",
+      "blurb": "Co-op rescue game: one crew is stranded, the other is searching, and the only channel between them is the interface.",
+      "stack": "Node · WebSockets",
+      "image": null,
+      "url": null
+    },
+    {
+      "name": "Primer",
+      "status": "in-dev",
+      "type": "app",
+      "blurb": "Ask for a primer on anything and get the same shape back every time — context, key events, live debates with citations, and where to read next.",
+      "stack": "Format test-driven across 5 domains",
+      "image": null,
+      "url": null
+    }
+  ]
+}
