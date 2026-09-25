@@ -135,11 +135,24 @@
       f.appendChild(el("p", "pf-stack", p.stack || ""));
       if (p.url){
         var a = el("a", "pf-go", p.type === "game" ? "Play " + p.name : "Open " + p.name);
-        a.href = p.url;
-        if (!/^https:\/\/justbost\.com\//.test(p.url)){ a.target = "_blank"; a.rel = "noopener"; }
+        a.href = p.url; a.target = "_blank"; a.rel = "noopener";
         f.appendChild(a);
+      } else if (p.cta && p.cta.href){
+        var c = el("a", "pf-go pf-go--contact", p.cta.label || "Contact");
+        c.href = p.cta.href;
+        c.addEventListener("click", function(e){
+          // On the homepage, open the contact form directly instead of just scrolling to it.
+          var opener = /#contact$/.test(c.getAttribute("href")) && document.querySelector("#contact [data-open-contact]");
+          if (!opener) return;
+          e.preventDefault();
+          lastFocus = opener;
+          closeModal();
+          document.getElementById("contact").scrollIntoView();
+          opener.click();
+        });
+        f.appendChild(c);
       } else {
-        f.appendChild(el("span", "pf-note", "Private tool · not publicly hosted"));
+        f.appendChild(el("span", "pf-note", p.note || "Private tool · not publicly hosted"));
       }
       body.appendChild(f);
       modal.appendChild(body);

@@ -113,6 +113,9 @@
 }
 .pf-go::after{content:"↗"}
 .pf-go:hover{opacity:.88}
+.pf-go--contact{background:transparent;color:var(--brass)}
+.pf-go--contact::after{content:"→"}
+.pf-go--contact:hover{opacity:1;background:var(--brass);color:var(--abyss)}
 .pf-note{font-family:var(--mono);font-size:.6875rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
 html.pf-locked{overflow:hidden}
 

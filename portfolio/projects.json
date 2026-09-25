@@ -21,10 +21,7 @@
       "stack": "Supabase · Cloudflare Pages · Electron",
       "images": [
         "shots/airlock/01.svg",
-        "shots/airlock/02.svg",
-        "shots/airlock/03.svg",
-        "shots/airlock/04.svg",
-        "shots/airlock/05.svg"
+        "shots/airlock/02.svg"
       ],
       "url": "https://airlock.neworbitdigital.com"
     },
@@ -68,7 +65,8 @@
         "shots/ads-agent/04.png",
         "shots/ads-agent/05.png"
       ],
-      "url": null
+      "url": null,
+      "cta": { "label": "Contact about use", "href": "/#contact" }
     },
     {
       "name": "Enrollment analytics",
@@ -83,7 +81,8 @@
         "shots/enrollment-analytics/04.svg",
         "shots/enrollment-analytics/05.svg"
       ],
-      "url": null
+      "url": null,
+      "cta": { "label": "Contact Justin", "href": "/#contact" }
     },
     {
       "name": "KINOLUST",
@@ -91,12 +90,9 @@
       "type": "tool",
       "blurb": "A DJ-style curation tool for film watch parties — browse a 5,000-film library by genre, director and TMDB keyword, build a set, and play it through mpv to friends on a Discord screenshare.",
       "stack": "Node.js · Express · SQLite · mpv · TMDB API",
-      "images": [
-        "shots/kinolust/01.png",
-        "shots/kinolust/02.png",
-        "shots/kinolust/03.png"
-      ],
-      "url": null
+      "images": ["shots/kinolust/01.png"],
+      "url": null,
+      "cta": { "label": "Contact about use", "href": "/#contact" }
     },
     {
       "name": "Ghost Signal",
@@ -128,7 +124,8 @@
       "blurb": "Ask for a primer on anything and get the same shape back every time — context, key events, live debates with citations, and where to read next.",
       "stack": "Format test-driven across 5 domains",
       "images": [],
-      "url": null
+      "url": null,
+      "note": "Currently in development"
     }
   ]
 }
