@@ -62,15 +62,6 @@
       "url": null
     },
     {
-      "name": "Capture & triage inbox",
-      "status": "in-use",
-      "type": "app",
-      "blurb": "Throw anything at it and it sorts itself — tasks, events, research topics, and lists each land on their own surface.",
-      "stack": "Cloudflare Workers · Supabase",
-      "images": [],
-      "url": null
-    },
-    {
       "name": "Enrollment analytics",
       "status": "delivered",
       "type": "analysis",
@@ -113,7 +104,12 @@
       "type": "app",
       "blurb": "A community-maintained catalog of cannabis strain lineage. Search a strain to see its parents, ancestors, origin and sources, with timeline and map views.",
       "stack": "Python build · Vanilla JS · Leaflet · GitHub Pages",
-      "images": ["https://justbost.com/stemma/screenshot.png"],
+      "images": [
+        "shots/stemma/01.svg",
+        "shots/stemma/02.svg",
+        "shots/stemma/03.svg",
+        "shots/stemma/04.svg"
+      ],
       "url": "https://justbost.com/stemma/"
     },
     {
