@@ -19,7 +19,7 @@
       "type": "app",
       "blurb": "Catch passing tasks, sort them later — a tiny capture surface plus an Eisenhower matrix that syncs across web, phone, and Windows.",
       "stack": "Supabase · Cloudflare Pages · Electron",
-      "image": null,
+      "images": [],
       "url": "https://airlock.neworbitdigital.com"
     },
     {
@@ -28,7 +28,7 @@
       "type": "game",
       "blurb": "A substitute driver, a broken-down school bus and a five-minute deadline. Keep the kids calm, stay hydrated without overdoing it, and get everyone back to school.",
       "stack": "Vanilla JS · Canvas 2D pseudo-3D · HTML5 Audio",
-      "image": "https://justbost.com/bus-sub/screenshot.png",
+      "images": ["https://justbost.com/bus-sub/screenshot.png"],
       "url": "https://justbost.com/bus-sub/"
     },
     {
@@ -37,7 +37,7 @@
       "type": "game",
       "blurb": "A turn-based solo survival-horror crawl where every action shows its odds before you commit and a failed roll ends your turn. Four scenarios, seeded maps you can replay.",
       "stack": "Vanilla HTML · CSS · JS",
-      "image": "https://justbost.com/night-shift/screenshot.png",
+      "images": ["https://justbost.com/night-shift/screenshot.png"],
       "url": "https://justbost.com/night-shift/"
     },
     {
@@ -46,7 +46,7 @@
       "type": "app",
       "blurb": "One platform across marketing channels — daily analytics, custom reporting, and change-history tagging so every performance shift traces back to its cause.",
       "stack": "Node · Supabase",
-      "image": null,
+      "images": [],
       "url": null
     },
     {
@@ -55,7 +55,7 @@
       "type": "app",
       "blurb": "Throw anything at it and it sorts itself — tasks, events, research topics, and lists each land on their own surface.",
       "stack": "Cloudflare Workers · Supabase",
-      "image": null,
+      "images": [],
       "url": null
     },
     {
@@ -64,7 +64,7 @@
       "type": "analysis",
       "blurb": "Enrollment, retention, and pipeline analysis for a private school, delivered to its board of trustees.",
       "stack": "Data analysis · Reporting",
-      "image": null,
+      "images": [],
       "url": null
     },
     {
@@ -73,7 +73,7 @@
       "type": "tool",
       "blurb": "A film library archived into one browsable surface that also runs scheduled streams for large watch parties.",
       "stack": "Encode pipeline · Scheduling",
-      "image": null,
+      "images": [],
       "url": null
     },
     {
@@ -82,7 +82,7 @@
       "type": "game",
       "blurb": "Co-op rescue game: one crew is stranded, the other is searching, and the only channel between them is the interface.",
       "stack": "Node · WebSockets",
-      "image": null,
+      "images": [],
       "url": null
     },
     {
@@ -91,7 +91,7 @@
       "type": "app",
       "blurb": "Ask for a primer on anything and get the same shape back every time — context, key events, live debates with citations, and where to read next.",
       "stack": "Format test-driven across 5 domains",
-      "image": null,
+      "images": [],
       "url": null
     }
   ]
