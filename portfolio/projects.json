@@ -96,12 +96,13 @@
     },
     {
       "name": "Ghost Signal",
-      "status": "playable",
+      "status": "in-dev",
       "type": "game",
       "blurb": "Co-op rescue game: one crew is stranded, the other is searching, and the only channel between them is the interface.",
       "stack": "Node · WebSockets",
       "images": [],
-      "url": null
+      "url": null,
+      "note": "Currently in development"
     },
     {
       "name": "Stemma",
