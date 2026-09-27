@@ -36,7 +36,7 @@
     },
     {
       "name": "Night Shift",
-      "status": "playable",
+      "status": "in-dev",
       "type": "game",
       "blurb": "A turn-based solo survival-horror crawl where every action shows its odds before you commit and a failed roll ends your turn. Four scenarios, seeded maps you can replay.",
       "stack": "Vanilla HTML · CSS · JS",
@@ -51,6 +51,15 @@
       "stack": "three.js · Web Audio (procedural) · Vanilla JS",
       "images": ["shots/field/01.svg"],
       "url": "https://justbost.com/field/"
+    },
+    {
+      "name": "Duck Dive",
+      "status": "playable",
+      "type": "game",
+      "blurb": "A duck bobbing at the surface, always swimming right — tap to dive for fish and dodge debris in a score-attack run. Collect seaweed currency to shop with a merchant duck for hats, outfits, and upgrades.",
+      "stack": "Vanilla JS · Canvas 2D · HTML5 Audio",
+      "images": ["https://justbost.com/duck-dive/screenshot.png"],
+      "url": "https://justbost.com/duck-dive/"
     },
     {
       "name": "Ads agent",
